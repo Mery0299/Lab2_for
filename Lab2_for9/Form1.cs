@@ -16,6 +16,5 @@ namespace Lab2_for9
         {
             InitializeComponent();
         }
-
     }
 }
