@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1_subsequeence = new System.Windows.Forms.TextBox();
+            this.textBox_subsequeence = new System.Windows.Forms.TextBox();
             this.button_solution = new System.Windows.Forms.Button();
-            this.label_MInAnswer = new System.Windows.Forms.Label();
-            this.label_Max_Answer = new System.Windows.Forms.Label();
+            this.label_MinAnswer = new System.Windows.Forms.Label();
+            this.label_MaxAnswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -58,13 +58,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Последовательность чисел";
             // 
-            // textBox1_subsequeence
+            // textBox_subsequeence
             // 
-            this.textBox1_subsequeence.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1_subsequeence.Location = new System.Drawing.Point(236, 63);
-            this.textBox1_subsequeence.Name = "textBox1_subsequeence";
-            this.textBox1_subsequeence.Size = new System.Drawing.Size(336, 33);
-            this.textBox1_subsequeence.TabIndex = 2;
+            this.textBox_subsequeence.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_subsequeence.Location = new System.Drawing.Point(236, 63);
+            this.textBox_subsequeence.Name = "textBox_subsequeence";
+            this.textBox_subsequeence.Size = new System.Drawing.Size(336, 33);
+            this.textBox_subsequeence.TabIndex = 2;
+            this.textBox_subsequeence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_subsequeence_KeyPress);
             // 
             // button_solution
             // 
@@ -78,42 +79,43 @@
             this.button_solution.TabIndex = 3;
             this.button_solution.Text = "Найти";
             this.button_solution.UseVisualStyleBackColor = true;
+            this.button_solution.Click += new System.EventHandler(this.button_solution_Click);
             // 
-            // label_MInAnswer
+            // label_MinAnswer
             // 
-            this.label_MInAnswer.AutoSize = true;
-            this.label_MInAnswer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_MInAnswer.Location = new System.Drawing.Point(30, 120);
-            this.label_MInAnswer.Name = "label_MInAnswer";
-            this.label_MInAnswer.Size = new System.Drawing.Size(52, 21);
-            this.label_MInAnswer.TabIndex = 4;
-            this.label_MInAnswer.Text = "label3";
+            this.label_MinAnswer.AutoSize = true;
+            this.label_MinAnswer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_MinAnswer.Location = new System.Drawing.Point(30, 120);
+            this.label_MinAnswer.Name = "label_MinAnswer";
+            this.label_MinAnswer.Size = new System.Drawing.Size(0, 21);
+            this.label_MinAnswer.TabIndex = 4;
             // 
-            // label_Max_Answer
+            // label_MaxAnswer
             // 
-            this.label_Max_Answer.AutoSize = true;
-            this.label_Max_Answer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_Max_Answer.Location = new System.Drawing.Point(30, 160);
-            this.label_Max_Answer.Name = "label_Max_Answer";
-            this.label_Max_Answer.Size = new System.Drawing.Size(52, 21);
-            this.label_Max_Answer.TabIndex = 5;
-            this.label_Max_Answer.Text = "label4";
+            this.label_MaxAnswer.AutoSize = true;
+            this.label_MaxAnswer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_MaxAnswer.Location = new System.Drawing.Point(30, 160);
+            this.label_MaxAnswer.Name = "label_MaxAnswer";
+            this.label_MaxAnswer.Size = new System.Drawing.Size(0, 21);
+            this.label_MaxAnswer.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 261);
-            this.Controls.Add(this.label_Max_Answer);
-            this.Controls.Add(this.label_MInAnswer);
+            this.Controls.Add(this.label_MaxAnswer);
+            this.Controls.Add(this.label_MinAnswer);
             this.Controls.Add(this.button_solution);
-            this.Controls.Add(this.textBox1_subsequeence);
+            this.Controls.Add(this.textBox_subsequeence);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Задача на for";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,10 +125,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1_subsequeence;
+        private System.Windows.Forms.TextBox textBox_subsequeence;
         private System.Windows.Forms.Button button_solution;
-        private System.Windows.Forms.Label label_MInAnswer;
-        private System.Windows.Forms.Label label_Max_Answer;
+        private System.Windows.Forms.Label label_MinAnswer;
+        private System.Windows.Forms.Label label_MaxAnswer;
     }
 }
 
