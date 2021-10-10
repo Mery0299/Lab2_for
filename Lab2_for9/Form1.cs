@@ -11,6 +11,7 @@ namespace Lab2_for9
             InitializeComponent();
         }
 
+        //событие нажатия на кнопку
         private void button_solution_Click(object sender, EventArgs e)
         {
             float[] nums;
@@ -26,6 +27,7 @@ namespace Lab2_for9
             }
         }
 
+        //запрет ввода символов
         private void textBox_subsequeence_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar) || Char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-' || e.KeyChar == ' ')
